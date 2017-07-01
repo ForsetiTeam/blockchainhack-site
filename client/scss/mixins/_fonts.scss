@@ -1,0 +1,35 @@
+@mixin ff-roboto {
+  font-family: 'Roboto';
+  font-weight: normal;
+}
+
+@mixin ff-roboto-light {
+  font-family: 'Roboto Light';
+  font-weight: 300;
+}
+
+@mixin ff-roboto-bold {
+  font-family: 'Roboto Bold';
+  font-weight: 700;
+}
+
+@mixin ff-roboto-black {
+  font-family: 'Roboto Black';
+  font-weight: 700;
+}
+
+
+@mixin ff-roboto-mono {
+  font-family: 'Roboto Mono';
+  font-weight: normal;
+}
+
+@mixin ff-roboto-mono-light {
+  font-family: 'Roboto Mono Light';
+  font-weight: 300;
+}
+
+@mixin ff-roboto-mono-bold {
+  font-family: 'Roboto Mono Bold';
+  font-weight: 700;
+}

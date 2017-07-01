@@ -1,0 +1,88 @@
+@import "~sanitize.css";
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  line-height: 1.4;
+  font-family: 'Roboto', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 12px;
+  -webkit-overflow-scrolling: touch;
+
+  &:global(.body-modal-opened) {
+    overflow: hidden;
+  }
+}
+
+input {
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none !important;
+
+  &[type=submit] {
+    background: none;
+    cursor: pointer;
+  }
+}
+
+input, textarea {
+  @include placeholder {
+    color: $color-input-placeholder !important;
+  }
+}
+
+input, textarea, button, select {
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &::-moz-focus-inner {
+    border: 0 !important;
+  }
+}
+
+input, textarea, select {
+
+  &:-webkit-autofill {
+    background-color: #fff !important;
+  }
+
+  &:focus {
+    background-color: #fff !important;
+  }
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  appearance: normal;
+  -webkit-appearance: none;
+  -moz-appearance: radio-container;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}

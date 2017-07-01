@@ -1,0 +1,25 @@
+.footer {
+  padding: 30px 0;
+  background: $color-brand;
+  @include ff-roboto-light;
+  color: $color-f-brightest;
+}
+
+.logo {
+  @include ff-roboto-bold;
+  font-size: 22px;
+}
+
+.nav {
+  font-size: 0;
+}
+
+.navItem {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

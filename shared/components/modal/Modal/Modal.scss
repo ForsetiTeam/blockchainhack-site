@@ -1,0 +1,78 @@
+.modal {
+  position: relative;
+  vertical-align: top;
+  cursor: default;
+}
+
+.header {
+  line-height: 22px;
+}
+
+.closeButton {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.title {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+}
+
+.content {
+  font-size: 16px;
+  text-align: center;
+}
+
+.subText {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+
+@include media-except-mobile {
+
+  .modal {
+    max-width: 600px;
+    padding: 0 50px;
+    margin: 30px 0;
+  }
+
+  .header {
+    padding-top: 30px;
+  }
+
+  .content {
+    padding: 30px 0;
+  }
+}
+
+@include media-mobile {
+
+  .modal {
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .header {
+    padding-top: 50px;
+  }
+
+  .content {
+    padding: 30px 0 20px;
+  }
+}

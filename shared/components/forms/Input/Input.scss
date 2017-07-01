@@ -1,0 +1,103 @@
+input, textarea {
+  outline: none;
+}
+
+.root {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #DCDFE6;
+
+  &.errored {
+    border-color: red;
+
+    .input ~ .label {
+      color: red;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  background: none;
+  padding: 11px 12px;
+  border: 0;
+  vertical-align: top;
+  @include ff-roboto;
+  line-height: 16px;
+  font-size: 16px;
+  color: #000;
+  border-radius: 2px;
+
+  &.labelExist {
+    padding-top: 15px;
+  }
+
+  &:focus {
+    border-color: #6F8BC2;
+  }
+
+  .disabled & {
+    background-color: #f2f2f3;
+    border-color: #ccc;
+  }
+
+  &:focus,
+  &.filled {
+    & ~ .label {
+      top: 0;
+      font-size: 12px;
+      color: #80838C;
+
+      &:after {
+        display: block !important;
+      }
+    }
+  }
+}
+
+textarea.input {
+  line-height: 18px;
+  padding: 11px 12px;
+  font-size: 16px;
+}
+
+.label {
+  height: 20px;
+  line-height: 20px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  z-index: 10;
+  color: $color-input-placeholder;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.09s linear;
+
+  &:after {
+    content: '';
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    right: -4px;
+    z-index: -1;
+  }
+
+  .disabled & {
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.error {
+  margin-top: 6px;
+  line-height: 13px;
+  font-size: 12px;
+  color: red;
+}

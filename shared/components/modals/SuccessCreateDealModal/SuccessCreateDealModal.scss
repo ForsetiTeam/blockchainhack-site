@@ -1,0 +1,29 @@
+.warnings {
+  display: block;
+  padding-left: 20px;
+  text-align: left;
+
+  li {
+    margin-top: 10px;
+    color: $color-f-danger;
+  }
+}
+
+.total {
+  width: 286px;
+  line-height: 48px;
+  margin: 30px auto 0;
+  border: 1px solid $color-border;
+  font-size: 18px;
+  text-align: center;
+
+  span {
+    padding-right: 10px;
+    @include ff-roboto-light;
+    color: $color-f-comment;
+  }
+
+  b {
+    color: #000;
+  }
+}

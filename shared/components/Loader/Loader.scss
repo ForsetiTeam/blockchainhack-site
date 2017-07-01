@@ -1,0 +1,11 @@
+.loaderContainer {
+  background-color: rgba(#fff, 0.78);
+  @include absolute-centring;
+  z-index: 10000000;
+}
+
+.loader {
+  width: 59px;
+  height: 59px;
+  @include absolute-centring;
+}

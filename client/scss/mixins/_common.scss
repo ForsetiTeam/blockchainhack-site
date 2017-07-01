@@ -1,0 +1,105 @@
+@mixin auth {
+  :global(.body-auth) & {
+    @content;
+  }
+}
+
+@mixin no-auth {
+  :global(.body-no-auth) & {
+    @content;
+  }
+}
+
+@mixin any-link {
+  &,
+  &:visited {
+    @content;
+  }
+}
+
+@mixin absolute-centring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin after {
+  &:after {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin before {
+  &:before {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin no-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin square-block {
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+@mixin triangle($dir, $size, $color) {
+  content: '';
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: $size transparent solid;
+  font-size: 0;
+
+  @if ($dir == 'top') {
+    border-bottom-color: $color;
+    border-top-width: 0;
+  }
+  @else if ($dir == 'right') {
+    border-left-color: $color;
+    border-right-width: 0;
+  }
+  @else if ($dir == 'bottom') {
+    border-top-color: $color;
+    border-bottom-width: 0;
+  }
+  @else if ($dir == 'left') {
+    border-right-color: $color;
+    border-left-width: 0;
+  }
+}

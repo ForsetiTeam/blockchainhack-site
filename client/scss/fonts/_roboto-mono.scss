@@ -1,0 +1,32 @@
+$path: 'fonts/roboto-mono/roboto-mono-';
+
+
+@font-face {
+  font-family: 'Roboto Mono Light';
+  src: url($path + 'light.eot');
+  src: url($path + 'light.eot?#iefix') format('embedded-opentype'),
+  url($path + 'light.woff') format('woff'),
+  url($path + 'light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url($path + 'regular.eot');
+  src: url($path + 'regular.eot?#iefix') format('embedded-opentype'),
+  url($path + 'regular.woff') format('woff'),
+  url($path + 'regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Mono Bold';
+  src: url($path + 'bold.eot');
+  src: url($path + 'bold.eot?#iefix') format('embedded-opentype'),
+  url($path + 'bold.woff') format('woff'),
+  url($path + 'bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}

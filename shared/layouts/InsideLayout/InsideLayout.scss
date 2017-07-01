@@ -1,0 +1,29 @@
+.headerContainer {
+  z-index: 200;
+}
+
+
+@include media-desktop {
+
+  .footerContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .contentContainer {
+    padding-bottom: $height-footer-except-mobile;
+  }
+}
+
+@include media-except-desktop {
+
+  .contentContainer {
+    padding-bottom: 0;
+  }
+
+  .footerContainer {
+    position: relative;
+  }
+}

@@ -1,0 +1,43 @@
+.link {
+  text-decoration: none;
+  vertical-align: top;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.commonColor {
+    @include any-link {
+      color: #1a84ef;
+    }
+
+    &:hover {
+      color: #2d9fff;
+    }
+  }
+
+  &.blackColor {
+    @include any-link {
+      color: #000;
+    }
+  }
+
+  &.brandColor {
+    &,
+    &:visited,
+    &:hover {
+      color: $color-brand;
+    }
+  }
+
+  &.blackToBrandColor {
+    @include any-link {
+      color: #000;
+    }
+
+    &:hover {
+      color: $color-brand;
+    }
+  }
+}

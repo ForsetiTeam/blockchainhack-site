@@ -1,0 +1,59 @@
+.pagination {
+  display: inline-block;
+  overflow: hidden;
+  list-style: none;
+  user-select: none;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: top;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.active {
+      a {
+        cursor: default;
+        color: $color-brand;
+
+        @include male {
+          color: $color-brand-male;
+        }
+      }
+    }
+  }
+
+  a {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    border: 1px solid $color-border;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #9B9B9B;
+    outline: none;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.hiddenArrow {
+  display: none !important;
+}
+
+.breakLabel {
+  width: 26px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+}

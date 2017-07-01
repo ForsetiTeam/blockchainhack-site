@@ -1,0 +1,42 @@
+$path: 'fonts/roboto/roboto-';
+
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url($path + 'light.eot');
+  src: url($path + 'light.eot?#iefix') format('embedded-opentype'),
+  url($path + 'light.woff') format('woff'),
+  url($path + 'light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($path + 'regular.eot');
+  src: url($path + 'regular.eot?#iefix') format('embedded-opentype'),
+  url($path + 'regular.woff') format('woff'),
+  url($path + 'regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url($path + 'bold.eot');
+  src: url($path + 'bold.eot?#iefix') format('embedded-opentype'),
+  url($path + 'bold.woff') format('woff'),
+  url($path + 'bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  src: url($path + 'black.eot');
+  src: url($path + 'black.eot?#iefix') format('embedded-opentype'),
+  url($path + 'black.woff') format('woff'),
+  url($path + 'black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}

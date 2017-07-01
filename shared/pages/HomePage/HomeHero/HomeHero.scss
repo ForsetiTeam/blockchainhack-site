@@ -1,0 +1,27 @@
+.homeHero {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: cover;
+}
+
+.content {
+  width: 70%;
+  padding: 100px 0;
+}
+
+.mainText {
+  @include ff-roboto-mono-light;
+  line-height: 66px;
+  font-size: 48px;
+  color: $color-brand;
+}
+
+.subText {
+  margin: 40px 0;
+  line-height: 30px;
+  @include ff-roboto-light;
+  letter-spacing: 1.1px;
+  font-size: 16px;
+  color: $color-f-main-text;
+}

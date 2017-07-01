@@ -1,0 +1,37 @@
+$socials: facebook, twitter;
+$colors: #3E5C95, #50ABF1;
+
+
+.button {
+  background-color: #333;
+}
+
+@each $social in $socials {
+  $i: index($socials, $social);
+  $color: nth($colors, $i);
+
+  button.#{$social} {
+    background: $color;
+
+    &:hover {
+      background-color: lighten($color, 5%);
+    }
+  }
+}
+
+.iconContainer {
+  height: 60%;
+  display: inline-block;
+  margin-right: 5px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.icon {
+  height: 200%;
+  display: block;
+
+  .twitter & {
+    transform: translateY(-50%);
+  }
+}

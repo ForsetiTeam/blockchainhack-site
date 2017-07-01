@@ -1,0 +1,20 @@
+.widthContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &.main {
+    padding: 30px 20px 100px;
+  }
+}
+
+.widthContainerIn {
+
+  &.relative {
+    position: relative;
+  }
+}
+
+.fullHeight {
+  height: 100%;
+}
