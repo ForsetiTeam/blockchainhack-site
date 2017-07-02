@@ -1,10 +1,10 @@
 import DialogModal from './DialogModal'
-import SuccessCreateDealModal from './SuccessCreateDealModal'
+import ConfirmCreateDealModal from './ConfirmCreateDealModal'
 import NotEnoughETHModal from './NotEnoughETHModal'
 
 
 export default {
   DialogModal,
-  SuccessCreateDealModal,
+  ConfirmCreateDealModal,
   NotEnoughETHModal,
 }

@@ -3,7 +3,10 @@ import { reducers } from 'redux/core'
 import actions from 'redux/actions'
 
 
-export const getCount = (callback) => contracts.deal.length.call(callback)
+export const getCount = (callback) =>
+  contracts.deal().then((instance) => {
+    instance.length.call(callback)
+  })
 
 export const get = () => {
   getCount((err, count) => {

@@ -28,8 +28,12 @@ export default class LoginPage extends Component {
   }
 
   submit = () => {
-    actions.auth.login()
-    actions.router.push(links.abs.customerDeals)
+    const { key } = this.state
+
+    if (key) {
+      actions.auth.login()
+      actions.router.push(links.abs.customerDeals)
+    }
   }
 
   render() {

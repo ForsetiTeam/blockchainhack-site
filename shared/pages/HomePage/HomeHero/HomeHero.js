@@ -11,12 +11,12 @@ const HomeHero = () => (
   <div styleName="homeHero">
     <div styleName="content">
       <div styleName="mainText">
-        What if technology could help improve conversations online?
+        The first working framework for arbitration on smart contracts
       </div>
       <div styleName="subText">
-        Discussing things you care about can be difficult.
-        The threat of abuse and harassment online means that many people stop expressing
-        themselves and give up on seeking different opinions.
+        Arbitration service based on smart contracts and Reputation System. In case of conflict situations
+        customers can open a dispute in our arbitration system. The arbitrators (Judges) stake their reputation
+        and Arbitrators reward distribution depends on it so they are motivated To resolve a dispute fairly
       </div>
       <Button h={50} brand>Get started</Button>
     </div>

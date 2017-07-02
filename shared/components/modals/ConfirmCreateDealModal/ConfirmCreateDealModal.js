@@ -3,19 +3,24 @@ import actions from 'redux/actions'
 import { modals } from 'helpers'
 
 import cssModules from 'react-css-modules'
-import styles from './SuccessCreateDealModal.scss'
+import styles from './ConfirmCreateDealModal.scss'
 
 import ConfirmModal from 'components/modal/ConfirmModal'
 
 
 @cssModules(styles)
-export default class SuccessCreateDealModal extends Component {
+export default class ConfirmCreateDealModal extends Component {
 
   static defaultProps = {
-    name: modals.SuccessCreateDeal,
+    name: modals.ConfirmCreateDeal,
   }
 
   confirm = () => {
+    const { data: { onConfirm } } = this.props
+
+    if (typeof onConfirm === 'function') {
+      onConfirm()
+    }
     this.close()
   }
 
@@ -26,7 +31,7 @@ export default class SuccessCreateDealModal extends Component {
   }
 
   render() {
-    const { name } = this.props
+    const { name, data: { totalPrice } } = this.props
 
     return (
       <ConfirmModal
@@ -41,7 +46,7 @@ export default class SuccessCreateDealModal extends Component {
           <li>Funds from your wallet will be automatically sent for deposit</li>
         </ul>
         <div styleName="total">
-          <span>Total amount:</span> <b>101,5 ETH</b>
+          <span>Total amount:</span> <b>{totalPrice} ETH</b>
         </div>
       </ConfirmModal>
     )

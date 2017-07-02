@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'valuelink'
 import actions from 'redux/actions'
-import { modals } from 'helpers'
+import { links, modals } from 'helpers'
 import cx from 'classnames'
 
 import cssModules from 'react-css-modules'
@@ -13,6 +13,8 @@ import DatePicker from 'components/forms/DatePicker'
 import Button from 'components/controls/Button'
 import Attachments from 'components/Attachments'
 
+
+const ourPercent = 1.5
 
 @cssModules(styles, { allowMultiple: true })
 export default class EditDealPage extends Component {
@@ -44,10 +46,17 @@ export default class EditDealPage extends Component {
   submit = () => {
     const { fields } = this.state
 
-    actions.deal.create(fields)
-      .then(() => {
-        actions.modals.open(modals.SuccessCreateDeal)
-      })
+    const totalPrice  = Math.round(((fields.deposit || 0) * ourPercent / 100) * 1e12) / 1e12
+
+    actions.modals.open(modals.ConfirmCreateDeal, {
+      totalPrice,
+      onConfirm: () => {
+        actions.deal.create(fields).then((address) => {
+          // actions.router.push(links.abs.deal.replace(':address', address))
+          actions.router.push(links.abs.customerDeals)
+        })
+      },
+    })
   }
 
   render() {
@@ -55,7 +64,6 @@ export default class EditDealPage extends Component {
     Object.keys(this.state.fields)
       .forEach((fieldName) => linked[fieldName] = Link.state(this, 'fields').at(fieldName))
 
-    const ourPercent  = 1.5
     const totalPrice  = Math.round(((linked.deposit.value || 0) * ourPercent / 100) * 1e12) / 1e12
     const isEditing   = window.location.pathname === '/deal/edit'
 

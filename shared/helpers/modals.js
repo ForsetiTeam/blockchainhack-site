@@ -9,7 +9,7 @@
 
 const modals = {
   Dialog: 'DialogModal',
-  SuccessCreateDeal: 'SuccessCreateDealModal',
+  ConfirmCreateDeal: 'ConfirmCreateDealModal',
   NotEnoughETH: 'NotEnoughETHModal',
 }
 
