@@ -1,9 +1,9 @@
 import React from 'react'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './HomeHero.scss'
 
-import WidthContainer from 'components/WidthContainer'
 import Button from 'components/controls/Button'
 
 
@@ -18,7 +18,7 @@ const HomeHero = () => (
         customers can open a dispute in our arbitration system. The arbitrators (Judges) stake their reputation
         and Arbitrators reward distribution depends on it so they are motivated To resolve a dispute fairly
       </div>
-      <Button h={50} brand>Get started</Button>
+      <Button h={50} brand to={links.abs.login}>Get started</Button>
     </div>
   </div>
 )

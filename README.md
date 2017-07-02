@@ -65,7 +65,7 @@ Wasted 3 hours of debugging asynchronous  solidity code because we just forgot t
  
 
 
-# BlockJudge
+# Front-End
 
 #### Techniques
 

@@ -14,5 +14,5 @@ export const development = resolveRule({
 export const production = resolveRule({
   name: '[ext]/[name]_[hash:6].[ext]',
   outputPath: 'images/',
-  publicPath: '/assets/__redux-new-page/',
+  publicPath: '/',
 })
