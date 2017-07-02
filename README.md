@@ -48,8 +48,8 @@ Our main goal is  to build an arbitration mechanism for Decentralized Economy th
 | Entity | Technologies |
 | ---- | ---- |
 | Smart contract | [Solidity + Truffle](https://github.com/BlockJudge/SmartContracts) |
-| Front-end | [React.js + Redux + Metamask](https://github.com/amijkko/BlockJudge) |
-| Back-end | [Telegram chat bot + node.js backend](https://github.com/HWkaizer/Blockjudje_Telegram-bot) |
+| Front-end | [React.js + Redux + Metamask](https://github.com/BlockJudge/BlockJudge) |
+| Back-end | [Telegram chat bot + node.js backend](https://github.com/BlockJudge/Blockjudje_Telegram-bot) |
 | Blockchain | [Ethereum, Qtum](https://github.com/BlockJudge/qtumRealisation) |
 | Other | [Toshi ethereum token browser+ docker](https://github.com/BlockJudge/Token-Browser-Toshi-Implementation) |
 
