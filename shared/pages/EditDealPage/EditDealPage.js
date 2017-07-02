@@ -9,6 +9,7 @@ import styles from './EditDealPage.scss'
 
 import Input from 'components/forms/Input'
 import TextArea from 'components/forms/TextArea'
+import DatePicker from 'components/forms/DatePicker'
 import Button from 'components/controls/Button'
 import Attachments from 'components/Attachments'
 
@@ -21,19 +22,39 @@ export default class EditDealPage extends Component {
 
     this.state = {
       attachmentCount: 0,
-      name: '',
-      description: '',
-      walletAddress: '',
-      depositAmount: '',
-      dealDateDate: '',
-      executionDate: '',
+      fields: {
+        title: '',
+        description: '',
+        contractorAddress: '',
+        deposit: '',
+        openTime: '',
+        closeTime: '',
+      },
     }
   }
 
+  componentWillMount() {
+    actions.deals.get()
+  }
+
+
+  submit = () => {
+    const { fields } = this.state
+
+    actions.deal.create(fields)
+      .then(() => {
+        actions.modals.open(modals.SuccessCreateDeal)
+      })
+  }
+
   render() {
-    const linked = Link.all(this, ...Object.keys(this.state))
-    
-    const isEditing = window.location.pathname === '/deal/edit'
+    const linked = Link.all(this, 'attachmentCount')
+    Object.keys(this.state.fields)
+      .forEach((fieldName) => linked[fieldName] = Link.state(this, 'fields').at(fieldName))
+
+    const ourPercent  = 1.5
+    const totalPrice  = Math.round(((linked.deposit.value || 0) * ourPercent / 100) * 1e12) / 1e12
+    const isEditing   = window.location.pathname === '/deal/edit'
 
     const totalPriceStyleName = cx('total', {
       'disabled': isEditing,
@@ -41,28 +62,29 @@ export default class EditDealPage extends Component {
 
     return (
       <div styleName="form">
-        <Input styleName="rowField" valueLink={linked.name} label="Name" />
+        <Input styleName="rowField" valueLink={linked.title} label="Title" />
         <TextArea styleName="rowField" valueLink={linked.description} placeholder="Description" />
 
-        <Input styleName="rowField" valueLink={linked.walletAddress} label="Wallet address" />
+        <Input styleName="rowField" valueLink={linked.contractorAddress} label="Wallet address" />
         <div styleName="fieldDescription">
           The ETH wallet address of the second counterparty of the deal
         </div>
+        <b>Example: 0x4C67EB86d70354731f11981aeE91d969e3823c39</b>
 
-        <Input styleName="rowField" valueLink={linked.depositAmount} label="Deposit in ETH" disabled={isEditing} />
+        <Input styleName="rowField" valueLink={linked.deposit} label="Deposit in ETH" disabled={isEditing} />
         <div styleName="fieldDescription">
           The Deposit will be transferred to the counterparty upon the execution of the deal,
           or returned to you if the deal doesn't go through.<br />
           If your deal gets to arbitration, 8% of this amount will be deducted
         </div>
 
-        <Input styleName="rowField" valueLink={linked.dealDateDate} label="Accept date" />
+        <DatePicker styleName="rowField" valueLink={linked.openTime} label="Accept date" />
         <div styleName="fieldDescription">
           Date to which the counterparty must accept the deal.
           If counterparty doesn't accept deal, the funds are returned to wallet
         </div>
 
-        <Input styleName="rowField" valueLink={linked.executionDate} label="Execution date" />
+        <DatePicker styleName="rowField" valueLink={linked.closeTime} label="Deal date" />
         <div styleName="fieldDescription">Date of deal execution</div>
 
         <Button h={46} styleName="rowField" whiteBrand onClick={() => {
@@ -75,18 +97,17 @@ export default class EditDealPage extends Component {
           <li>You will pay a commission for the service in <b>1,5%</b>!</li>
         </ul>
 
-        <div styleName={totalPriceStyleName}>
-          <span>Total amount:</span> <b>101,5 ETH</b>
+        <div styleName="totalContainer">
+          <div styleName={totalPriceStyleName}>
+            <span>Total amount:</span> <b>{totalPrice} ETH</b>
+          </div>
         </div>
 
         <Button
           styleName="submitButton"
           h={56}
           brand
-          onClick={() => {
-            actions.deal.create()
-            actions.modals.open(modals.SuccessCreateDeal)
-          }}
+          onClick={this.submit}
         >Create Deal</Button>
       </div>
     )

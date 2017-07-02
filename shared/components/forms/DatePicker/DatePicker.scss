@@ -1,0 +1,30 @@
+:global(.react-datepicker) {
+  border-radius: 0;
+}
+
+:global(.react-datepicker__input-container) {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #cfcbd6;
+
+  input {
+    width: 100%;
+    display: block;
+    padding: 13px 12px;
+    line-height: 16px;
+    @include ff-roboto;
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+:global(.react-datepicker__day) {
+  border-radius: 0 !important;
+}
+
+:global(.react-datepicker__day--selected),
+:global(.react-datepicker__day--keyboard-selected) {
+  background-color: $color-brand !important;
+  border-radius: 0 !important;
+}

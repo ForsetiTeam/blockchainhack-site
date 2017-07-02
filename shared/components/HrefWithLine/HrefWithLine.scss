@@ -3,7 +3,7 @@
   text-decoration: none !important;
   color: #000 !important;
   @include inline-block;
-  @include ff-roboto-bold;
+  @include ff-roboto-light;
 
   &:first-child {
     margin-left: 0;

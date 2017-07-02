@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import actions from 'redux/actions'
+import { connect } from 'redaction/immutable'
+import moment from 'moment'
 
 import cssModules from 'react-css-modules'
 import styles from './DealPage.scss'
@@ -7,50 +9,35 @@ import styles from './DealPage.scss'
 import Attachments from 'components/Attachments'
 
 
+@connect({
+  deal: 'deal',
+})
 @cssModules(styles, { allowMultiple: true })
 export default class DealPage extends Component {
 
   componentWillMount() {
-    const data = actions.deal.get('0')
+    const { params: { address } } = this.props
 
-    console.log(444, data)
+    actions.deal.getOnce(address)
   }
 
   render() {
-    const name = 'Top secret deal'
-    const description = `
-      Redaction is wrapper for reducers. The main purpose is to refuse from using constants and 
-      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and dispatch method in code. 
-      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and 
-      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and dispatch method in code. 
-      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and 
-      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and dispatch method in code. 
-      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and 
-      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
-      The main purpose is to refuse from using constants and dispatch method in code. 
-      There are Plain and Immutable versions.
-    `
+    const { deal: { title, description, deposit, openTime, closeTime } } = this.props
 
     return (
       <div>
-        <div styleName="name">{name}</div>
+        <div styleName="title">{title}</div>
         <div styleName="description">{description}</div>
-        <Attachments styleName="attachments" count={7} />
+        <Attachments styleName="attachments" />
         <div styleName="info">
           <div styleName="infoItem">
-            <span>Total amount:</span> <b>101,5 ETH</b>
+            <span>Total amount:</span> <b>{deposit} ETH</b>
           </div>
           <div styleName="infoItem">
-            <span>Accept date:</span> <b>07/05/2017</b>
+            <span>Accept date:</span> <b>{moment(openTime).format('MM/DD/YYYY')}</b>
           </div>
           <div styleName="infoItem">
-            <span>Deal date:</span> <b>08/22/2017</b>
+            <span>Deal date:</span> <b>{moment(closeTime).format('MM/DD/YYYY')}</b>
           </div>
         </div>
 

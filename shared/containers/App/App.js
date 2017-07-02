@@ -8,6 +8,7 @@ import RequestLoader from 'components/RequestLoader'
 import ModalConductor from 'components/modal/ModalConductor'
 
 import './App.scss'
+import 'react-datepicker/dist/react-datepicker.css'
 
 
 @connect({

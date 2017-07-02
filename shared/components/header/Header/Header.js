@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'bj-proptypes'
 import { Flex, Box } from 'bj-flexbox'
 import { connect } from 'redaction/immutable'
+import actions from 'redux/actions'
 import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
@@ -41,7 +42,7 @@ export default class Header extends Component {
           align="center"
         >
           <Box>
-            <div styleName="logo">BlockJudge</div>
+            <div styleName="logo" onClick={() => actions.router.push(links.abs.home)}>BlockJudge</div>
           </Box>
           <Box>
             <div styleName="nav">

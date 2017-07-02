@@ -1,7 +1,6 @@
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
-import config from '@eagle/app-config'
 
 
 export default (webpackConfig) => {
@@ -37,11 +36,11 @@ export default (webpackConfig) => {
       filename: '[name].css',
       allChunks: true,
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'redux-new-page-vendor',
-      // this assumes your vendor imports exist in the node_modules directory
-      minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0,
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'commons',
+    //   // this assumes your vendor imports exist in the node_modules directory
+    //   minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0,
+    // }),
   )
 
   return webpackConfig

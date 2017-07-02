@@ -1,7 +1,6 @@
 import { fromJS } from 'immutable'
 import { routerMiddleware } from 'react-router-redux'
 import { createStore, combineReducers } from 'redaction/immutable'
-import { reducer as formReducer } from 'redux-form/immutable'
 import { browserHistory } from 'react-router'
 import localReducers from 'redux/reducers'
 import routingReducer from 'redux/reducers/routing'
@@ -19,7 +18,6 @@ const store = createStore({
   reducers: {
     ...combineReducers(localReducers),
     routing: routingReducer,
-    form: formReducer,
   },
   middleware: [
     routerMiddleware(browserHistory),

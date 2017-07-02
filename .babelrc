@@ -2,9 +2,7 @@
   "presets": [ "react", [ "es2015", { "loose": true } ], "stage-0" ],
   "plugins": [
     [ "extensible-destructuring", { "mode": "optout", "impl": "immutable" } ],
-    "rintlmg",
     "lodash",
-    "transform-runtime",
     "add-module-exports",
     "transform-decorators-legacy"
   ],

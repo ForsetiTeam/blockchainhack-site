@@ -9,8 +9,6 @@ import routes from 'routes'
 
 import Root from 'containers/Root'
 
-import 'normalize.css/normalize.css'
-
 
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.get('routing').toJS(),
@@ -20,5 +18,5 @@ ReactDOM.render(
   <Root store={store} history={history}>
     {routes}
   </Root>,
-  document.getElementById('redux-mount')
+  document.getElementById('root')
 )

@@ -24,7 +24,7 @@ const getDumbAttachment = () => attachments[randomize()]
 export default class Attachments extends Component {
 
   render() {
-    const { className, count } = this.props
+    const { className, count = randomize(4, 9) } = this.props
 
     return (
       <div styleName="attachments" className={className}>

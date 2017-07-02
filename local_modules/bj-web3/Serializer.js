@@ -1,4 +1,3 @@
-import SolidityCoder from 'web3/lib/solidity/coder'
 import { forEach, map } from 'lodash'
 
 
@@ -8,12 +7,10 @@ class Serializer {
     this.map = map
   }
 
-  hashToObject(hash) {
-    const result      = {}
-    const decodeList  = map(this.map, ({ decode }) => decode)
-    const data        = SolidityCoder.decodeParams(decodeList, hash)
+  arrToObject(arr) {
+    const result = {}
 
-    forEach(data, (value, index) => {
+    forEach(arr, (value, index) => {
       const { key, modify = v => v } = this.map[index]
       result[key] = modify(value)
     })
@@ -23,6 +20,16 @@ class Serializer {
 
   toArray(obj) {
     return map(this.map, ({ key }) => obj[key])
+  }
+
+  functionsToObject(fnObj) {
+    const result = {}
+
+    forEach(this.map, ({ key, modify = v => v }, fnKey) => {
+      result[key || fnKey] = modify(fnObj[fnKey]())
+    })
+
+    return result
   }
 }
 

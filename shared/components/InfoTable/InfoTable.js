@@ -25,7 +25,7 @@ export default class InfoTable extends Component {
         <tbody>
           {
             dataExist && data.map((rowData, rowIndex) => (
-              <tr key={rowIndex} onClick={onRowClick}>
+              <tr key={rowIndex} onClick={() => onRowClick(rowData)}>
                 {
                   columns.map(({ name, render }, colIndex) => {
                     const cellValue = rowData[name]

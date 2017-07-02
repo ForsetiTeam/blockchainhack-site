@@ -1,10 +1,10 @@
 import baseConfig from './default'
 
 export default {
-  publicPath: `https://www.blockjudge.com${baseConfig.publicPath}`,
+  publicPath: `http://spinooey.ru${baseConfig.publicPath}`,
 
   services: {
-    base: 'https://www.blockjudge.com/',
-    api: 'https://www.blockjudge.com/',
+    base: 'http://spinooey.ru/',
+    api: 'http://spinooey.ru/',
   },
 }
