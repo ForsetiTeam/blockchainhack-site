@@ -40,6 +40,13 @@ export default class InfoTable extends Component {
               </tr>
             ))
           }
+          {
+            !dataExist && (
+              <tr styleName="noDataTR">
+                <td colSpan={columns.length}>There are no data</td>
+              </tr>
+            )
+          }
         </tbody>
       </table>
     )

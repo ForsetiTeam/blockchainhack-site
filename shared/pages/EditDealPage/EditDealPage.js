@@ -14,8 +14,6 @@ import Button from 'components/controls/Button'
 import Attachments from 'components/Attachments'
 
 
-const ourPercent = 1.5
-
 @cssModules(styles, { allowMultiple: true })
 export default class EditDealPage extends Component {
 
@@ -46,7 +44,7 @@ export default class EditDealPage extends Component {
   submit = () => {
     const { fields } = this.state
 
-    const totalPrice  = Math.round(((fields.deposit || 0) * ourPercent / 100) * 1e12) / 1e12
+    const totalPrice  = Math.round(((fields.deposit || 0) * 1.015) * 1e12) / 1e12
 
     actions.modals.open(modals.ConfirmCreateDeal, {
       totalPrice,
@@ -64,7 +62,7 @@ export default class EditDealPage extends Component {
     Object.keys(this.state.fields)
       .forEach((fieldName) => linked[fieldName] = Link.state(this, 'fields').at(fieldName))
 
-    const totalPrice  = Math.round(((linked.deposit.value || 0) * ourPercent / 100) * 1e12) / 1e12
+    const totalPrice  = Math.round(((linked.deposit.value || 0) * 1.015) * 1e12) / 1e12
     const isEditing   = window.location.pathname === '/deal/edit'
 
     const totalPriceStyleName = cx('total', {
@@ -80,7 +78,6 @@ export default class EditDealPage extends Component {
         <div styleName="fieldDescription">
           The ETH wallet address of the second counterparty of the deal
         </div>
-        <b>Example: 0x4C67EB86d70354731f11981aeE91d969e3823c39</b>
 
         <Input styleName="rowField" valueLink={linked.deposit} label="Deposit in ETH" disabled={isEditing} />
         <div styleName="fieldDescription">

@@ -4,7 +4,8 @@ import * as auth from './auth'
 import * as modals from './modals'
 import * as router from './router'
 
-import * as arbitrage from './arbitrage'
+import * as arbitrations from './arbitrations'
+import * as arbitration from './arbitration'
 import * as deals from './deals'
 import * as deal from './deal'
 
@@ -16,7 +17,8 @@ export default {
   modals,
   router,
 
-  arbitrage,
+  arbitrations,
+  arbitration,
   deals,
   deal,
 }

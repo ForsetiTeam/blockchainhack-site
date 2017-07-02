@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import actions from 'redux/actions'
 import { connect } from 'redaction/immutable'
 import moment from 'moment'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './DealPage.scss'
@@ -19,17 +20,24 @@ export default class DealPage extends Component {
   componentWillMount() {
     const { params: { address } } = this.props
 
+    actions.deal.cleanState()
     actions.deal.getOnce(address)
   }
 
   openArbitrage = () => {
     const { params: { address } } = this.props
 
-    actions.arbitrage.create(address)
+    actions.router.push(links.abs.arbitration.replace(':address', address))
   }
 
   render() {
-    const { deal: { title, description, deposit, openTime, closeTime } } = this.props
+    const { deal } = this.props
+
+    if (!deal.size) {
+      return
+    }
+
+    const { deal: { title, description, deposit, openTime, closeTime, statuses: { arbitraged } } } = this.props
 
     return (
       <div>
@@ -47,7 +55,11 @@ export default class DealPage extends Component {
             <span>Deal date:</span> <b>{moment(closeTime).format('MM/DD/YYYY')}</b>
           </div>
         </div>
-        <Button styleName="openArbitrageButton" danger onClick={this.openArbitrage}>Open arbitrage</Button>
+        {
+          !arbitraged && (
+            <Button styleName="openArbitrageButton" danger onClick={this.openArbitrage}>Open arbitration</Button>
+          )
+        }
       </div>
     )
   }

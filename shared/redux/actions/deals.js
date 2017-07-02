@@ -8,7 +8,7 @@ export const getCount = (callback) =>
     instance.length.call(callback)
   })
 
-export const get = () => {
+export const get = (callback) => {
   getCount((err, count) => {
     const arr = Array.apply(null, { length: count.toString() })
 
@@ -20,7 +20,11 @@ export const get = () => {
       })
     })))
       .then((deals) => {
-        reducers.deals.set(deals)
+        if (callback) {
+          callback(deals)
+        } else {
+          reducers.deals.set(deals)
+        }
       })
   })
 }

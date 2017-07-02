@@ -77,6 +77,7 @@ export const get = (address, callback) => {
 
                 deal.customerStatus = customerStatus
                 deal.contractorStatus = contractorStatus
+                deal.statuses = statuses
 
                 console.info('Deal: ', deal)
 
@@ -112,6 +113,9 @@ export const create = (_values, callback) =>
       ])
         .toArray(values)
 
+      console.log('Values:', data)
+      console.log('Gas params:', gasParams(values.deposit))
+
       contracts.deal().then((instance) => {
         instance.createDeal.sendTransaction(...data, gasParams(values.deposit), (err, res) => {
           resolve(res)
@@ -119,3 +123,5 @@ export const create = (_values, callback) =>
       })
     })
   })
+
+export const cleanState = () => reducers.deal.clean()

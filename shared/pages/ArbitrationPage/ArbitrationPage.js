@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'valuelink'
+import actions from 'redux/actions'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './ArbitrationPage.scss'
@@ -21,6 +23,14 @@ export default class ArbitrationPage extends Component {
     }
   }
 
+  submit = () => {
+    const { params: { address } } = this.props
+
+    actions.arbitration.create(address, () => {
+      actions.router.push(links.abs.arbitrations)
+    })
+  }
+
   render() {
     const linked = Link.all(this, ...Object.keys(this.state))
 
@@ -38,14 +48,7 @@ export default class ArbitrationPage extends Component {
         }}>Attach files</Button>
         <Attachments styleName="attachments" count={linked.attachmentCount.value} />
 
-        <Button
-          styleName="submitButton"
-          h={56}
-          brand
-          onClick={() => {
-
-          }}
-        >Send Argument</Button>
+        <Button styleName="submitButton" h={56} brand onClick={this.submit}>Send Argument</Button>
       </div>
     )
   }

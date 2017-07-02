@@ -16,7 +16,7 @@ const waitWeb3 = () => new Promise((resolve) => {
 
 const gasParams = (deposit) => ({
   gas: 3000000,
-  // value: deposit,
+  value: deposit,
   from: window.web3.eth.accounts[0],
 })
 

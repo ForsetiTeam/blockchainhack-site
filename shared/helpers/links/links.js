@@ -11,7 +11,7 @@ const links = generateLinks({
   createDeal: 'create-deal',
   editDeal: 'edit-deal/:address',
   arbitrations: 'arbitrations',
-  arbitration: 'arbitration',
+  arbitration: 'arbitration/:address',
 })
 
 export default links

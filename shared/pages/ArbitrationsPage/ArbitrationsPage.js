@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import actions from 'redux/actions'
 import { event, links } from 'helpers'
+import { connect } from 'redaction/immutable'
+import moment from 'moment'
 
 import cssModules from 'react-css-modules'
 import styles from './ArbitrationsPage.scss'
@@ -9,11 +11,18 @@ import Href from 'components/Href'
 import InfoTable from 'components/InfoTable'
 
 
+@connect({
+  arbitrations: 'arbitrations',
+})
 @cssModules(styles)
 export default class ArbitrationsPage extends Component {
 
+  componentWillMount() {
+    actions.arbitrations.get()
+  }
+
   handleRowClick = (rowData) => {
-    actions.router.push(links.abs.arbitration)
+    //actions.router.push(links.abs.arbitration.replace(':address', rowData))
   }
 
   renderDealNameCell(cellValue, rowData) {
@@ -23,42 +32,17 @@ export default class ArbitrationsPage extends Component {
   }
 
   render() {
-    const columns = [
-      { name: 'dealName', title: 'Deal', render: this.renderDealNameCell },
-      { name: 'status', title: 'Status' },
-      { name: 'dealDate', title: 'Deal date' },
-    ]
+    const { arbitrations } = this.props
 
-    const data = [
-      {
-        id: 1,
-        dealName: 'Buy crocodile from Mike',
-        status: 'Confirmed',
-        dealDate: '11/25/2017',
-      },
-      {
-        id: 2,
-        dealName: 'Buy crocodile from Mike',
-        status: 'Confirmed',
-        dealDate: '11/25/2017',
-      },
-      {
-        id: 3,
-        dealName: 'Buy crocodile from Mike',
-        status: 'Confirmed',
-        dealDate: '11/25/2017',
-      },
-      {
-        id: 4,
-        dealName: 'Buy crocodile from Mike',
-        status: 'Confirmed',
-        dealDate: '11/25/2017',
-      },
+    const columns = [
+      { name: 'title', title: 'Deal', render: this.renderDealNameCell },
+      { name: 'customerStatus', title: 'Status' },
+      { name: 'closeTime', title: 'Deal date', render: v => moment(v).format('MM/DD/YYYY') },
     ]
 
     return (
       <div>
-        <InfoTable columns={columns} data={data} onRowClick={this.handleRowClick} />
+        <InfoTable columns={columns} data={arbitrations.toJS()} onRowClick={this.handleRowClick} />
       </div>
     )
   }

@@ -42,7 +42,7 @@ export default class ConfirmCreateDealModal extends Component {
       >
         <ul styleName="warnings">
           <li>If your deal gets to arbitration, 8% of deposit will be deducted</li>
-          <li>Service commission 1,5% , 1,5 ETH</li>
+          <li>Service commission 1,5% - {totalPrice * 0.015} ETH</li>
           <li>Funds from your wallet will be automatically sent for deposit</li>
         </ul>
         <div styleName="total">
