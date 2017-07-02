@@ -10,22 +10,7 @@ import styles from './EditDealPage.scss'
 import Input from 'components/forms/Input'
 import TextArea from 'components/forms/TextArea'
 import Button from 'components/controls/Button'
-
-import attachment1 from './images/attachment-1.jpg'
-import attachment2 from './images/attachment-2.jpg'
-import attachment3 from './images/attachment-3.jpg'
-import attachment4 from './images/attachment-4.jpg'
-
-
-const attachments = [
-  attachment1,
-  attachment2,
-  attachment3,
-  attachment4,
-]
-
-const randomize = (min = 0, max = attachments.length - 1) => Math.floor(Math.random() * (max - min + 1)) + min
-const getDumbAttachment = () => attachments[randomize()]
+import Attachments from 'components/Attachments'
 
 
 @cssModules(styles, { allowMultiple: true })
@@ -83,21 +68,7 @@ export default class EditDealPage extends Component {
         <Button h={46} styleName="rowField" whiteBrand onClick={() => {
           linked.attachmentCount.set(linked.attachmentCount.value + 1)
         }}>Attach files</Button>
-
-        <div styleName="attachments">
-          {
-            Array
-              .apply(null, {length: linked.attachmentCount.value})
-              .map(Number.call, Number)
-              .map((num) => (
-                <div key={num} styleName="attachmentContainer">
-                  <div styleName="attachment">
-                    <img styleName="preview" src={getDumbAttachment()} />
-                  </div>
-                </div>
-              ))
-          }
-        </div>
+        <Attachments styleName="attachments" count={linked.attachmentCount.value} />
 
         <ul styleName="warning">
           <li>Funds from your wallet will be automatically sent for deposit!</li>

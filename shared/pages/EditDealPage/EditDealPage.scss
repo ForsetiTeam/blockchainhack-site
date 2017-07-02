@@ -14,24 +14,7 @@
 }
 
 .attachments {
-  margin: 10px -10px 0;
-  font-size: 0;
-}
-
-.attachmentContainer {
-  width: 20%;
-  @include inline-block;
-  padding: 10px;
-}
-
-.attachment {
-  display: block;
-}
-
-.preview {
-  width: 100%;
-  display: block;
-  border: 1px solid $color-brand;
+  margin-top: 10px;
 }
 
 .warning {
@@ -69,5 +52,5 @@
   width: 300px;
   display: block;
   padding: 0 !important;
-  margin: 30px auto 0;
+  margin: 50px auto 0;
 }

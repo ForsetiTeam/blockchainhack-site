@@ -11,6 +11,7 @@ const links = generateLinks({
   deal: 'deal',
   createDeal: 'deal/create',
   editDeal: 'deal/edit',
+  arbitrations: 'arbitrations',
   arbitration: 'arbitration',
 })
 

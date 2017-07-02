@@ -8,7 +8,7 @@ import styles from './InfoTable.scss'
 export default class InfoTable extends Component {
 
   render() {
-    const { columns, data, onRowClick, renderCell } = this.props
+    const { columns, data, onRowClick } = this.props
     const dataExist = Boolean(data && data.length)
 
     return (
@@ -27,12 +27,12 @@ export default class InfoTable extends Component {
             dataExist && data.map((rowData, rowIndex) => (
               <tr key={rowIndex} onClick={onRowClick}>
                 {
-                  columns.map(({ name }, colIndex) => {
+                  columns.map(({ name, render }, colIndex) => {
                     const cellValue = rowData[name]
 
                     return (
                       <td key={colIndex}>
-                        {typeof renderCell === 'function' ? renderCell(cellValue) : cellValue}
+                        {typeof render === 'function' ? render(cellValue, rowData) : cellValue}
                       </td>
                     )
                   })

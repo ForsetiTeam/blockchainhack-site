@@ -22,6 +22,7 @@ import LoginPage from 'pages/LoginPage'
 import DealsPage from 'pages/DealsPage'
 import DealPage from 'pages/DealPage'
 import EditDealPage from 'pages/EditDealPage'
+import ArbitrationsPage from 'pages/ArbitrationsPage'
 import ArbitrationPage from 'pages/ArbitrationPage'
 
 
@@ -35,6 +36,7 @@ const routes = (
         <Route {...links.routes.deal} component={DealPage} />
         <Route {...links.routes.createDeal} component={EditDealPage} />
         <Route {...links.routes.editDeal} component={EditDealPage} />
+        <Route {...links.routes.arbitrations} component={ArbitrationsPage} />
         <Route {...links.routes.arbitration} component={ArbitrationPage} />
       </Route>
       <Route component={WithLogoLayout}>

@@ -1,0 +1,21 @@
+.attachments {
+  margin: -10px;
+  font-size: 0;
+}
+
+.attachmentContainer {
+  width: 20%;
+  max-width: 120px;
+  @include inline-block;
+  padding: 10px;
+}
+
+.attachment {
+  display: block;
+}
+
+.preview {
+  width: 100%;
+  display: block;
+  border: 1px solid $color-brand;
+}

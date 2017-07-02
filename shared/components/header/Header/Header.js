@@ -31,7 +31,7 @@ export default class Header extends Component {
 
     const nav = [
       { title: 'Deals', to: links.abs.customerDeals, isActive: isDealsLinkActive },
-      { title: 'Arbitration', to: links.abs.arbitration },
+      { title: 'Arbitrations', to: links.abs.arbitrations },
     ]
 
     return (
