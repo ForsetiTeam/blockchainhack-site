@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NativeListener from 'react-native-listener'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import Collapse from 'react-collapse'
 
 

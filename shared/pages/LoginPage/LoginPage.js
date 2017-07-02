@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Flex, Box } from 'sb-flexbox'
+import { Flex, Box } from 'bj-flexbox'
 import actions from 'redux/actions'
 import Link from 'valuelink'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './LoginPage.scss'
@@ -28,7 +29,7 @@ export default class LoginPage extends Component {
 
   submit = () => {
     actions.auth.login()
-    actions.router.push('/deals')
+    actions.router.push(links.abs.customerDeals)
   }
 
   render() {

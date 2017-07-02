@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import actions from 'redux/actions'
 
 import Button from 'components/controls/Button'

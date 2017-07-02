@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box } from 'sb-flexbox'
+import { Flex, Box } from 'bj-flexbox'
 
 import cssModules from 'react-css-modules'
 import styles from './ExceptMobile.scss'

@@ -22,6 +22,7 @@
     "@eagle/app-config": "git+https://github.com/Graf009/app-config.git",
     "autosize": "^3.0.20",
     "babel-polyfill": "^6.23.0",
+    "bignumber.js": "^4.0.2",
     "classnames": "^2.2.5",
     "extensible-runtime": "^4.0.1",
     "lodash": "^4.17.2",

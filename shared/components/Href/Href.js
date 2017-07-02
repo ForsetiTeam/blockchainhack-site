@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import { ignoreProps } from 'helpers'
 import cx from 'classnames'
 

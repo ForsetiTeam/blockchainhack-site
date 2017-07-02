@@ -12,13 +12,13 @@
   &:before {
     content: '';
     height: 100%;
-    display: inline-block;
+    @include inline-block;
     vertical-align: middle;
   }
 }
 
 .centringContent {
-  display: inline-block;
+  @include inline-block;
   white-space: normal;
   vertical-align: middle;
   text-align: left;

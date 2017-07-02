@@ -3,6 +3,7 @@ import Link from 'valuelink'
 import actions from 'redux/actions'
 import { modals } from 'helpers'
 import cx from 'classnames'
+import web3 from 'bj-web3'
 
 import cssModules from 'react-css-modules'
 import styles from './DealPage.scss'
@@ -31,63 +32,42 @@ const getDumbAttachment = () => attachments[randomize()]
 @cssModules(styles, { allowMultiple: true })
 export default class DealPage extends Component {
 
-  constructor() {
-    super()
+  componentWillMount() {
+    const data = actions.deal.get('0')
 
-    this.editing = window.location.pathname === '/deal/edit'
-
-    this.state = {
-      attachmentCount: 0,
-      name: '',
-      description: '',
-      walletAddress: '',
-      depositAmount: '',
-      acceptDate: '',
-      executionDate: '',
-    }
+    console.log(444, data)
   }
 
   render() {
-    const linked = Link.all(this, ...Object.keys(this.state))
-
-    const totalPriceStyleName = cx('total', {
-      'disabled': this.editing,
-    })
+    const name = 'Top secret deal'
+    const description = `
+      Redaction is wrapper for reducers. The main purpose is to refuse from using constants and 
+      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and dispatch method in code. 
+      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and 
+      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and dispatch method in code. 
+      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and 
+      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and dispatch method in code. 
+      There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and 
+      dispatch method in code. There are Plain and Immutable versions. Redaction is wrapper for reducers. 
+      The main purpose is to refuse from using constants and dispatch method in code. 
+      There are Plain and Immutable versions.
+    `
 
     return (
-      <div styleName="form">
-        <Input styleName="rowField" valueLink={linked.name} label="Name" />
-        <TextArea styleName="rowField" valueLink={linked.description} placeholder="Description" />
-
-        <Input styleName="rowField" valueLink={linked.walletAddress} label="Wallet address" />
-        <div styleName="fieldDescription">
-          The ETH wallet address of the second counterparty of the deal
-        </div>
-
-        <Input styleName="rowField" valueLink={linked.depositAmount} label="Deposit in ETH" disabled={this.editing} />
-        <div styleName="fieldDescription">
-          The Deposit will be transferred to the counterparty upon the execution of the deal,
-          or returned to you if the deal doesn't go through.<br />
-          If your deal gets to arbitration, 8% of this amount will be deducted
-        </div>
-
-        <Input styleName="rowField" valueLink={linked.acceptDate} label="Accept date" />
-        <div styleName="fieldDescription">
-          Date to which the counterparty must accept the deal.
-          If counterparty doesn't accept deal, the funds are returned to wallet
-        </div>
-
-        <Input styleName="rowField" valueLink={linked.executionDate} label="Execution date" />
-        <div styleName="fieldDescription">Date of deal execution</div>
-
-        <Button h={46} styleName="rowField" whiteBrand onClick={() => {
-          linked.attachmentCount.set(linked.attachmentCount.value + 1)
-        }}>Attach files</Button>
+      <div>
+        <div styleName="name">{name}</div>
+        <div styleName="description">{description}</div>
 
         <div styleName="attachments">
           {
             Array
-              .apply(null, {length: linked.attachmentCount.value})
+              .apply(null, {length: 7})
               .map(Number.call, Number)
               .map((num) => (
                 <div key={num} styleName="attachmentContainer">
@@ -99,21 +79,18 @@ export default class DealPage extends Component {
           }
         </div>
 
-        <ul styleName="warning">
-          <li>Funds from your wallet will be automatically sent for deposit!</li>
-          <li>You will pay a commission for the service in <b>1,5%</b>!</li>
-        </ul>
-
-        <div styleName={totalPriceStyleName}>
-          <span>Total amount:</span> <b>101,5 ETH</b>
+        <div styleName="info">
+          <div styleName="infoItem">
+            <span>Total amount:</span> <b>101,5 ETH</b>
+          </div>
+          <div styleName="infoItem">
+            <span>Accept date:</span> <b>07/05/2017</b>
+          </div>
+          <div styleName="infoItem">
+            <span>Deal date:</span> <b>08/22/2017</b>
+          </div>
         </div>
 
-        <Button
-          styleName="submitButton"
-          h={56}
-          brand
-          onClick={() => actions.modals.open(modals.SuccessCreateDeal)}
-        >Create Deal</Button>
       </div>
     )
   }

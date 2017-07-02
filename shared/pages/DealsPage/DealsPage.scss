@@ -1,25 +1,14 @@
-.form {
-  max-width: 700px;
-  margin: 50px auto 0;
-}
-
-.radioButton {
-
-  span {
-    font-size: 16px;
-  }
-}
-
-.fields {
+.nav {
   margin-top: 50px;
-  padding: 0 50px;
-  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0;
 }
 
-.passwordInput {
-  margin-top: 20px;
+.navItem {
+  margin-left: 40px;
+  font-size: 18px;
 }
 
-.submitButton {
-  margin-top: 20px;
+.createDealButton {
+  margin-top: 30px;
 }

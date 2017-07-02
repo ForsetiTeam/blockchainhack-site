@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import actions from 'redux/actions'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import { event } from 'helpers'
 
 import cssModules from 'react-css-modules'

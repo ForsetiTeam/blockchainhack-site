@@ -1,27 +1,37 @@
 import React, { Component } from 'react'
-import { Flex, Box } from 'sb-flexbox'
+import PropTypes from 'bj-proptypes'
+import { Flex, Box } from 'bj-flexbox'
 import { connect } from 'redaction/immutable'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './Header.scss'
 
-import Href from 'components/Href'
+import HrefWithLine from 'components/HrefWithLine'
 import Button from 'components/controls/Button'
+import CreateDealButton from 'components/controls/buttons/CreateDealButton'
 import HeaderContainer from 'components/header/HeaderContainer'
 
 
 @connect({
   isLoggedIn: 'auth.isLoggedIn',
-})
+}, {}, { pure: false })
 @cssModules(styles)
 export default class Header extends Component {
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired,
+  }
+
   render() {
+    const { router: { location: { pathname } } } = this.context
     const { isLoggedIn } = this.props
 
+    const isDealsLinkActive = /deals\//.test(pathname)
+
     const nav = [
-      { title: 'Deals', link: '/deals' },
-      { title: 'Arbitration', link: '/arbitration' },
+      { title: 'Deals', to: links.abs.customerDeals, isActive: isDealsLinkActive },
+      { title: 'Arbitration', to: links.abs.arbitration },
     ]
 
     return (
@@ -36,14 +46,12 @@ export default class Header extends Component {
           <Box>
             <div styleName="nav">
               {
-                nav.map(({ title, link }, index) => (
-                  <Href
+                nav.map((item, index) => (
+                  <HrefWithLine
                     key={index}
                     styleName="navItem"
-                    activeClassName={styles.navItemActive}
-                    title={title}
-                    to={link}
                     customColor
+                    {...item}
                   />
                 ))
               }
@@ -52,9 +60,9 @@ export default class Header extends Component {
           <Box>
             {
               isLoggedIn ? (
-                <Button whiteBrand to="/create-deal">Create Deal</Button>
+                <CreateDealButton whiteBrand />
               ) : (
-                <Button whiteBrand to="/login">Login</Button>
+                <Button whiteBrand to={links.abs.login}>Login</Button>
               )
             }
           </Box>

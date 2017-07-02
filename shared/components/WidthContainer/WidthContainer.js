@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import cx from 'classnames'
 
 import cssModules from 'react-css-modules'

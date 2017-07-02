@@ -1,0 +1,59 @@
+.infoTable {
+  width: 100%;
+  border: 1px solid $color-border;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+
+  thead {
+    border-bottom: 2px solid $color-border;
+  }
+
+  tbody {
+
+    tr {
+      line-height: 26px;
+      border-bottom: 1px solid $color-border;
+      position: relative;
+      @include no-user-select();
+
+      &:hover {
+        background-color: #F7F9FA;
+      }
+    }
+  }
+
+  th {
+    @include ff-roboto-bold;
+    text-align: left;
+  }
+
+  td, th {
+    padding: 10px 5px;
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: 10px
+    }
+
+    &:last-child {
+      padding-right: 10px
+    }
+  }
+}
+
+.infoTable10 {
+  
+  td, th {
+    padding: 10px
+  }
+}
+                                               
+.noDataTR {
+  background-color: transparent !important;
+
+  td {
+    padding: 20px 0;
+    text-align: center;
+  }
+}

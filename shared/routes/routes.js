@@ -21,6 +21,7 @@ import HomePage from 'pages/HomePage'
 import LoginPage from 'pages/LoginPage'
 import DealsPage from 'pages/DealsPage'
 import DealPage from 'pages/DealPage'
+import EditDealPage from 'pages/EditDealPage'
 import ArbitrationPage from 'pages/ArbitrationPage'
 
 
@@ -29,9 +30,11 @@ const routes = (
     <Route component={WithFooterLayout}>
       <Route component={WithHeaderLayout}>
         <IndexRoute component={HomePage} />
-        <Route {...links.routes.deals} component={DealsPage} />
-        <Route {...links.routes.createDeal} component={DealPage} />
-        <Route {...links.routes.editDeal} component={DealPage} />
+        <Route {...links.routes.customerDeals} component={DealsPage} />
+        <Route {...links.routes.contractorDeals} component={DealsPage} />
+        <Route {...links.routes.deal} component={DealPage} />
+        <Route {...links.routes.createDeal} component={EditDealPage} />
+        <Route {...links.routes.editDeal} component={EditDealPage} />
         <Route {...links.routes.arbitration} component={ArbitrationPage} />
       </Route>
       <Route component={WithLogoLayout}>

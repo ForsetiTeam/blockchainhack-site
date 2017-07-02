@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import autosize from 'autosize'
 
 import cssModules from 'react-css-modules'

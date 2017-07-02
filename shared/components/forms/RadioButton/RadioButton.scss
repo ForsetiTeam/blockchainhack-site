@@ -43,7 +43,7 @@ $radio-label-color: #565a67;
 .radio {
   width: 16px;
   height: 16px;
-  display: inline-block;
+  @include inline-block;
   background: #fff;
   border: 1px solid $radio-border-color;
   position: absolute;

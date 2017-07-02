@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'sb-proptypes'
-import Media from 'sb-media'
+import PropTypes from 'bj-proptypes'
+import Media from 'bj-media'
 
 import Modal from 'components/modal/Modal'
 

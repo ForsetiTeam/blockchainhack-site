@@ -3,6 +3,7 @@ export default {
   register: 'Register',
   login: 'Authentication',
   deals: 'Deals',
+  deal: 'Deal',
   createDeal: 'Create Deal',
   editDeal: 'Edit Deal',
   arbitration: 'Arbitration',

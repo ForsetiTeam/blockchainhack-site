@@ -21,7 +21,7 @@ $colors: #3E5C95, #50ABF1;
 
 .iconContainer {
   height: 60%;
-  display: inline-block;
+  @include inline-block;
   margin-right: 5px;
   overflow: hidden;
   vertical-align: middle;

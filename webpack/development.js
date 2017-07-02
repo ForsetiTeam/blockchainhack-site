@@ -14,7 +14,7 @@ export default (webpackConfig) => {
   
   webpackConfig.plugins.push(
     new HtmlWebpackPlugin({
-      title: 'ScentBird',
+      title: 'BlockJudge',
       template: config.paths.client('index.html'),
       //favicon: config.paths.client('assets/favicon-32x32.png'),
       hash: false,

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import { ignoreProps } from 'helpers'
 
 import cssModules from 'react-css-modules'

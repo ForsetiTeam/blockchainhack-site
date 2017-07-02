@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'sb-proptypes'
+import PropTypes from 'bj-proptypes'
 import { Input } from 'valuelink/tags'
 import cx from 'classnames'
 

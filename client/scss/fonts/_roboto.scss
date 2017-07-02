@@ -30,13 +30,3 @@ $path: 'fonts/roboto/roboto-';
   font-style: normal;
   font-weight: 700;
 }
-
-@font-face {
-  font-family: 'Roboto Black';
-  src: url($path + 'black.eot');
-  src: url($path + 'black.eot?#iefix') format('embedded-opentype'),
-  url($path + 'black.woff') format('woff'),
-  url($path + 'black.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}

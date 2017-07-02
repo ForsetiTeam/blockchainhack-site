@@ -15,32 +15,5 @@
 
 .navItem {
   margin-left: 60px;
-  position: relative;
-  text-decoration: none !important;
   font-size: 18px;
-  color: #000;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:hover {
-    color: $color-brand;
-  }
-}
-
-.navItemActive {
-  cursor: default;
-  color: #000 !important;
-
-  &:after {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: $color-brand;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-  }
 }
