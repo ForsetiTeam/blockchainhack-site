@@ -102,6 +102,8 @@ export const create = (_values) =>
 
     console.log(3333, transactionId)
 
+    resolve(transactionId)
+
     // contracts.deal.createDeal.call(...data, gasParams(values.deposit), (err, transactionId) => {
     //   console.log(333, transactionId)
     //   //resolve(transactionId)
