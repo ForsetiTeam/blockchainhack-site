@@ -67,6 +67,14 @@ Wasted 3 hours of debugging asynchronous  solidity code because we just forgot t
 
 # Front-End
 
+[BlockJudge site](http://spinooey.ru/)
+
+### Expirience
+
+Pavel Ivanov: *It was an excellent experience of getting acquainted with the technologies of managing crypto-currencies. I met Ethereum, Ktum, Metamask, Pari, Ropsten. Sometimes I had a headache about how it works, especially when I recieved hash sum from service and needed to encode it to array and then convert from bytes and then to associative array with :D I like such brain#*
+
+### Project
+
 #### Techniques
 
 - Universal architecture
