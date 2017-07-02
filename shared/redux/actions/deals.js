@@ -3,17 +3,21 @@ import { reducers } from 'redux/core'
 import actions from 'redux/actions'
 
 
-export const getCount = () => contracts.deal.length().toNumber()
+export const getCount = (callback) => contracts.deal.length.call(callback)
 
 export const get = () => {
-  const deals = Array
-    .apply(null, { length: getCount() })
-    .map((v, index) => {
-      const address = actions.deal.getAddress(index)
-      return actions.deal.get(address)
-    })
+  getCount((err, count) => {
+    const arr = Array.apply(null, { length: count.toString() })
 
-  console.info('Deals: ', deals)
-
-  reducers.deals.set(deals)
+    Promise.all(arr.map((v, index) => new Promise((resolve) => {
+      actions.deal.getAddress(index, (err, address) => {
+        actions.deal.get(address, (err, dealData) => {
+          resolve(dealData)
+        })
+      })
+    })))
+      .then((deals) => {
+        reducers.deals.set(deals)
+      })
+  })
 }

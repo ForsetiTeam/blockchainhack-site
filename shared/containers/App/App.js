@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'redaction/immutable'
 import actions from 'redux/actions'
 import { reducers } from 'redux/core'
-import { connect } from 'redaction/immutable'
 import { links } from 'helpers'
 
 import RequestLoader from 'components/RequestLoader'
@@ -18,11 +18,9 @@ import 'react-datepicker/dist/react-datepicker.css'
 export default class App extends Component {
 
   componentWillMount() {
-    console.log('links', links)
-    console.log('actions', actions)
-    console.log('reducers', reducers)
-
-    //actions.me.fetch()
+    // console.log('links', links)
+    // console.log('actions', actions)
+    // console.log('reducers', reducers)
   }
 
   render() {

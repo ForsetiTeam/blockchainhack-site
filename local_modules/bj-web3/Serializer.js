@@ -22,14 +22,18 @@ class Serializer {
     return map(this.map, ({ key }) => obj[key])
   }
 
-  functionsToObject(fnObj) {
+  functionsToObject(fnObj, callback) {
     const result = {}
 
-    forEach(this.map, ({ key, modify = v => v }, fnKey) => {
-      result[key || fnKey] = modify(fnObj[fnKey]())
-    })
-
-    return result
+    Promise.all(map(this.map, ({ key, modify = v => v }, fnKey) => new Promise((resolve) => {
+      fnObj[fnKey].call((err, res) => {
+        result[key || fnKey] = modify(res)
+        resolve()
+      })
+    })))
+      .then(() => {
+        callback(result)
+      })
   }
 }
 

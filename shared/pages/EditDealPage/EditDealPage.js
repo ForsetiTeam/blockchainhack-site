@@ -34,9 +34,12 @@ export default class EditDealPage extends Component {
   }
 
   componentWillMount() {
-    actions.deals.get()
-  }
+    const { params: { address } } = this.props
 
+    if (address) {
+      actions.deals.get(address)
+    }
+  }
 
   submit = () => {
     const { fields } = this.state

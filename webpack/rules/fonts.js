@@ -25,5 +25,5 @@ export const development = resolveRule({
 export const production = resolveRule({
   name: '[name].[ext]',
   outputPath: 'fonts/',
-  publicPath: '/assets/fonts/',
+  publicPath: '/fonts/',
 })

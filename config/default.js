@@ -17,7 +17,7 @@ const config = {
     server: (file = '') => path.join(basePath, 'server', file),
   },
 
-  publicPath: '/assets/',
+  publicPath: '/',
 
   http: {
     host: 'localhost',

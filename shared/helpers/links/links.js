@@ -8,8 +8,8 @@ const links = generateLinks({
   customerDeals: 'deals/customer',
   contractorDeals: 'deals/contractor',
   deal: 'deal/:address',
-  createDeal: 'deal/create',
-  editDeal: 'deal/edit',
+  createDeal: 'create-deal',
+  editDeal: 'edit-deal/:address',
   arbitrations: 'arbitrations',
   arbitration: 'arbitration',
 })
