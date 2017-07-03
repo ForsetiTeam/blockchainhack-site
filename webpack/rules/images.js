@@ -12,7 +12,5 @@ export const development = resolveRule({
 })
 
 export const production = resolveRule({
-  name: '[ext]/[name]_[hash:6].[ext]',
-  outputPath: 'images/',
-  publicPath: '/',
+  name: 'images/[name]_[hash:6].[ext]',
 })

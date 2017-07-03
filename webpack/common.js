@@ -27,8 +27,8 @@ const webpackConfig = {
 
   output: {
     path: config.paths.build(),
-    filename: '[name].js',
-    chunkFilename: '[id].chunk.js',
+    filename: '[name].[hash:6].js',
+    chunkFilename: '[id].[hash:6].js',
     publicPath: config.publicPath,
   },
 
