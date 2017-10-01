@@ -20,13 +20,15 @@ const Href = ({
     'blackColor': blackColor,
     'blackToBrandColor': blackToBrandColor,
   })
+
+  const content = children || title
   
   const props = ignoreProps(rest, 'activeClassName')
 
   if (!to && !redirect && !mailto) {
     return (
       <span styleName={styleName} {...props}>
-        {children || title}
+        {content}
       </span>
     )
   }
@@ -38,7 +40,7 @@ const Href = ({
         to={to}
         {...rest}
       >
-        {children || title}
+        {content}
       </Link>
     )
   }

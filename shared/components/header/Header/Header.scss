@@ -1,7 +1,13 @@
 .logo {
+  height: 40px;
   cursor: pointer;
   @include ff-roboto-bold;
-  font-size: 30px;
+
+  [role="title"] {
+    margin-left: 15px;
+    line-height: 40px;
+    font-size: 30px;
+  }
 }
 
 .loginButton {

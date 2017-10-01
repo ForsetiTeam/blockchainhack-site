@@ -1,0 +1,131 @@
+.socials {
+  font-size: 0;
+}
+
+.social {
+  margin-left: 20px;
+  cursor: pointer;
+  @include inline-block();
+  position: relative;
+  border-radius: 50%;
+  transition: all 0.13s ease;
+  box-shadow: #fff 0 0 0 0;
+
+  svg {
+    height: 56%;
+    display: block;
+    @include absolute-centring;
+  }
+
+  &.facebook {
+
+    svg {
+      transform: translate3d(-6%, -2%, 0);
+    }
+  }
+
+  &.twitter {
+
+    svg {
+      height: 50%;
+      transform: translate3d(0, -6%, 0);
+    }
+  }
+
+  &.telegram {
+
+    svg {
+      height: 96%;
+      transform: translate3d(-2%, 0, 0);
+    }
+  }
+
+  &.github {
+    background-color: #000;
+  }
+
+  &.colored {
+
+    svg {
+      fill: #fff;
+    }
+
+    &.facebook {
+      background-color: #3b5998;
+    }
+
+    &.twitter {
+      background-color: #55acee;
+    }
+
+    &.instagram {
+      background-color: #6a453b;
+    }
+
+    &.linkedin {
+      background-color: #0e76a8;
+    }
+
+    &.telegram {
+      background-color: #139bd0;
+    }
+
+    &.github {
+      background-color: #000;
+    }
+  }
+
+  &.white {
+    background-color: #fff;
+  }
+
+  &.whiteEmpty {
+    border: 1px solid #fff;
+
+    svg {
+      fill: #fff;
+    }
+    
+    &:hover {
+      box-shadow: #fff 0 0 0 1px;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+
+    &.colored {
+
+      &.facebook {
+        box-shadow: darken(#3b5998, 15%) 0 0 0 2px;
+      }
+
+      &.twitter {
+        box-shadow: darken(#55acee, 15%) 0 0 0 2px;
+      }
+
+      &.instagram {
+        box-shadow: darken(#6a453b, 15%) 0 0 0 2px;
+      }
+
+      &.linkedin {
+        box-shadow: darken(#0e76a8, 15%) 0 0 0 2px;
+      }
+
+      &.telegram {
+        box-shadow: darken(#139bd0, 15%) 0 0 0 2px;
+      }
+
+      &.github {
+        box-shadow: darken(#000, 15%) 0 0 0 2px;
+      }
+    }
+
+    &.whiteEmpty {
+
+    }
+  }
+}

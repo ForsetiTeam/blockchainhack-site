@@ -55,7 +55,7 @@ const webpackConfig = {
     new webpack.NoEmitOnErrorsPlugin(),
     new ProgressBarPlugin({ clear: false }),
     new HtmlWebpackPlugin({
-      title: 'BlockJudge',
+      title: 'Forseti',
       template: config.paths.client('index.html'),
       //favicon: config.paths.client('assets/favicon-32x32.png'),
       hash: false,

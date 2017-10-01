@@ -1,0 +1,32 @@
+$path: 'fonts/gilroy/gilroy-';
+
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url($path + 'medium.eot');
+  src: url($path + 'medium.eot?#iefix') format('embedded-opentype'),
+  url($path + 'medium.woff') format('woff'),
+  url($path + 'medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-Semibold';
+  src: url($path + 'semibold.eot');
+  src: url($path + 'semibold.eot?#iefix') format('embedded-opentype'),
+  url($path + 'semibold.woff') format('woff'),
+  url($path + 'semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-Extrabold';
+  src: url($path + 'extrabold.eot');
+  src: url($path + 'extrabold.eot?#iefix') format('embedded-opentype'),
+  url($path + 'extrabold.woff') format('woff'),
+  url($path + 'extrabold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}

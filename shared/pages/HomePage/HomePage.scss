@@ -1,1 +1,18 @@
+.incomingContainer {
+  text-align: center;
+}
 
+.incoming {
+  border: 2px solid #00a4f5;
+  padding: 50px 100px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  color: #00a4f5;
+  @include inline-block;
+}
+
+.socialsContainer {
+  margin-top: 60px;
+  text-align: center;
+}

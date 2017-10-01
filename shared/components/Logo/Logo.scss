@@ -1,0 +1,19 @@
+.logo {
+  display: block;
+  position: relative;
+  font-size: 0;
+}
+
+.image {
+  height: 100%;
+  @include inline-block;
+}
+
+.title {
+  margin-left: 10px;
+  @include inline-block;
+  text-decoration: none;
+  line-height: 30px;
+  font-size: 24px;
+  color: #000;
+}

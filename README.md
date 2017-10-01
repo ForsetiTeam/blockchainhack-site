@@ -47,11 +47,11 @@ Our main goal is  to build an arbitration mechanism for Decentralized Economy th
  
 | Entity | Technologies |
 | ---- | ---- |
-| Smart contract | [Solidity + Truffle](https://github.com/BlockJudge/SmartContracts) |
-| Front-end | [React.js + Redux + Metamask](https://github.com/BlockJudge/BlockJudge) |
-| Back-end | [Telegram chat bot + node.js backend](https://github.com/BlockJudge/Blockjudje_Telegram-bot) |
-| Blockchain | [Ethereum, Qtum](https://github.com/BlockJudge/qtumRealisation) |
-| Other | [Toshi ethereum token browser+ docker](https://github.com/BlockJudge/Token-Browser-Toshi-Implementation) |
+| Smart contract | [Solidity + Truffle](https://github.com/ForsetiTeam/SmartContracts) |
+| Front-end | [React.js + Redux + Metamask](https://github.com/ForsetiTeam/ForsetiTeam) |
+| Back-end | [Telegram chat bot + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
+| Blockchain | [Ethereum, Qtum](https://github.com/ForsetiTeam/qtumRealisation) |
+| Other | [Toshi ethereum token browser+ docker](https://github.com/ForsetiTeam/Token-Browser-Toshi-Implementation) |
 
 
 ## What was the biggest obstacle that your team overcame ?
@@ -67,7 +67,7 @@ Wasted 3 hours of debugging asynchronous  solidity code because we just forgot t
 
 # Front-End
 
-[BlockJudge site](http://spinooey.ru/)
+[Forseti site](http://forseti.im/)
 
 ### Expirience
 
@@ -109,8 +109,8 @@ Pavel Ivanov: *It was an excellent experience of getting acquainted with the tec
 #### Setup
 
 ```
-git clone https://github.com/amijkko/BlockJudge.git
-cd BlockJudge
+git clone https://github.com/amijkko/ForsetiTeam.git
+cd ForsetiTeam
 npm start
 ```
 

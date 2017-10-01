@@ -18,7 +18,7 @@ export default (webpackConfig) => {
     }),
   )
 
-  webpackConfig.module.loaders = webpackConfig.module.rules.map((loader) => {
+  webpackConfig.module.rules = webpackConfig.module.rules.map((loader) => {
     if (loader.test.test('*.css') || loader.test.test('*.scss')) {
       loader.use = ExtractTextPlugin.extract({
         fallback: 'style-loader',

@@ -1,10 +1,10 @@
 import baseConfig from './default'
 
 export default {
-  publicPath: `http://spinooey.ru${baseConfig.publicPath}`,
+  publicPath: `https://forseti.im${baseConfig.publicPath}`,
 
   services: {
-    base: 'http://spinooey.ru/',
-    api: 'http://spinooey.ru/',
+    base: 'https://forseti.im/',
+    api: 'https://forseti.im/',
   },
 }

@@ -3,16 +3,19 @@
   background-repeat: no-repeat;
   background-position: 95% 50%;
   background-size: cover;
+  text-align: center;
 }
 
 .content {
-  width: 70%;
+  max-width: 900px;
   padding: 60px 0;
+  margin: 0 auto;
 }
 
 .mainText {
-  @include ff-roboto-mono-light;
+  @include ff-extrabold;
   line-height: 66px;
+  letter-spacing: 2px;
   font-size: 48px;
   color: $color-brand;
 }
@@ -20,8 +23,7 @@
 .subText {
   margin: 40px 0;
   line-height: 30px;
-  @include ff-roboto-light;
   letter-spacing: 1.1px;
-  font-size: 16px;
+  font-size: 18px;
   color: $color-f-main-text;
 }

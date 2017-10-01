@@ -13,6 +13,12 @@ export default class HomePage extends Component {
     return (
       <div>
         <HomeHero />
+        <div styleName="incomingContainer">
+          <div styleName="incoming">ICO Details coming soon</div>
+        </div>
+        <div styleName="socialsContainer">
+
+        </div>
       </div>
     )
   }

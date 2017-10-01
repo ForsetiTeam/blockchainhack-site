@@ -9,6 +9,8 @@ import routes from 'routes'
 
 import Root from 'containers/Root'
 
+import './scss/fonts/index.scss'
+
 
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.get('routing').toJS(),

@@ -8,14 +8,14 @@ $default-text-color: #465365;
 .button {
   @include inline-block;
   background: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   cursor: pointer;
   vertical-align: top;
   white-space: nowrap;
   text-decoration: none !important;
   text-align: center;
   color: #fff;
-  @include ff-roboto-mono;
+  @include ff-semibold;
   @include no-user-select;
 
   &:focus {
@@ -46,7 +46,7 @@ $default-text-color: #465365;
 }
 
 .default {
-  border: 1px solid $default-border-color;
+  border-color: $default-border-color;
   color: $default-text-color;
 
   &:hover {
@@ -62,7 +62,6 @@ $default-text-color: #465365;
 
 .white {
   background-color: #fff;
-  border: 1px solid transparent;
   color: #000;
 
   &:hover {
@@ -72,7 +71,6 @@ $default-text-color: #465365;
 
 .whiteBrand {
   background-color: #fff;
-  border: 1px solid;
   border-color: $color-brand;
   color: $color-brand;
 

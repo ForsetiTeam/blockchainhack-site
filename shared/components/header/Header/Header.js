@@ -8,6 +8,7 @@ import { links } from 'helpers'
 import cssModules from 'react-css-modules'
 import styles from './Header.scss'
 
+import Logo from 'components/Logo/Logo'
 import HrefWithLine from 'components/HrefWithLine'
 import Button from 'components/controls/Button'
 import CreateDealButton from 'components/controls/buttons/CreateDealButton'
@@ -42,22 +43,26 @@ export default class Header extends Component {
           align="center"
         >
           <Box>
-            <div styleName="logo" onClick={() => actions.router.push(links.abs.home)}>BlockJudge</div>
+            <Logo styleName="logo" to={links.abs.home} />
           </Box>
-          <Box>
-            <div styleName="nav">
-              {
-                nav.map((item, index) => (
-                  <HrefWithLine
-                    key={index}
-                    styleName="navItem"
-                    customColor
-                    {...item}
-                  />
-                ))
-              }
-            </div>
-          </Box>
+          {
+            isLoggedIn && (
+              <Box>
+                <div styleName="nav">
+                  {
+                    nav.map((item, index) => (
+                      <HrefWithLine
+                        key={index}
+                        styleName="navItem"
+                        customColor
+                        {...item}
+                      />
+                    ))
+                  }
+                </div>
+              </Box>
+            )
+          }
           <Box>
             {
               isLoggedIn ? (

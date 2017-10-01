@@ -1,3 +1,18 @@
+@mixin ff-medium {
+  font-family: 'Gilroy-Medium';
+  font-weight: normal;
+}
+
+@mixin ff-semibold {
+  font-family: 'Gilroy-Semibold';
+  font-weight: 300;
+}
+
+@mixin ff-extrabold {
+  font-family: 'Gilroy-Extrabold';
+  font-weight: 700;
+}
+
 @mixin ff-roboto {
   font-family: 'Roboto';
   font-weight: normal;

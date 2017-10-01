@@ -18,7 +18,7 @@ export default class WithLogoLayout extends Component {
       <div>
         <HeaderContainer>
           <div styleName="logo">
-            BlockJudge
+            Forseti
           </div>
         </HeaderContainer>
         <WidthContainer main>

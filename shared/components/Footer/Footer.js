@@ -4,8 +4,9 @@ import { Flex, Box } from 'bj-flexbox'
 import cssModules from 'react-css-modules'
 import styles from './Footer.scss'
 
-import WidthContainer from 'components/WidthContainer'
-import Href from 'components/Href'
+import WidthContainer from 'components/WidthContainer/WidthContainer'
+import Href from 'components/Href/Href'
+import Socials from 'components/Socials/Socials'
 
 
 @cssModules(styles)
@@ -26,7 +27,7 @@ export default class Footer extends Component {
             align="center"
           >
             <Box>
-              <div styleName="logo">BlockJudge</div>
+              <div styleName="logo">Forseti</div>
             </Box>
             <Box>
               {
@@ -42,6 +43,13 @@ export default class Footer extends Component {
               }
             </Box>
           </Flex>
+          <div styleName="socialsContainer">
+            <Socials size={40} whiteEmpty links={{
+              facebook: 'https://facebook.com/forseti_im',
+              telegram: 'https://telegram.me/forseti_channel',
+              twitter: 'https://twitter.com/forseti_im',
+            }} />
+          </div>
         </WidthContainer>
       </footer>
     )
